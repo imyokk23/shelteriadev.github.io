@@ -81,7 +81,7 @@
 
     .main-content {
       background: #fff;
-      margin-top: 0px;
+      margin-top: -50px;
       border-radius: 20px 20px 0 0;
       position: relative;
       z-index: 10;
@@ -341,47 +341,48 @@
     <section class="portfolio-section">
       <div class="container">
         <h2 class="section-title">Project Keren Kita</h2>
+        
         <div class="portfolio-grid">
           <div class="project-card">
-            <h3 class="project-title">
-              <div class="project-icon">🛒</div>
-              Toko Online yang Jualan Laris
-            </h3>
-            <p class="project-desc">
-              Platform e-commerce custom yang bikin UMKM bisa jualan online dengan mudah. 
-              Fitur lengkap dari katalog produk, keranjang belanja, sampe payment gateway!
-            </p>
-            <a href="#" class="project-link" target="_blank">
-              Cek Project Ini →
-            </a>
+              <h3 class="project-title">
+                  <div class="project-icon">🛒</div>
+                  Toko Online yang Jualan Laris
+              </h3>
+              <p class="project-desc">
+                  Platform e-commerce custom yang bikin UMKM bisa jualan online dengan mudah. 
+                  Fitur lengkap dari katalog produk, keranjang belanja, sampe payment gateway!
+              </p>
+              <a href="https://username-anda.github.io/nama-repo-toko-online/" class="project-link" target="_blank" rel="noopener noreferrer">
+                  Cek Project Ini →
+              </a>
           </div>
           
           <div class="project-card">
-            <h3 class="project-title">
-              <div class="project-icon">📊</div>
-              Dashboard Admin Super Praktis
-            </h3>
-            <p class="project-desc">
-              Dashboard internal yang bikin ngatur stok barang dan manajemen penggunja jadi gampang banget. 
-              Interface clean, data real-time, dan insight yang membantu!
-            </p>
-            <a href="#" class="project-link" target="_blank">
-              Lihat Dashboard →
-            </a>
+              <h3 class="project-title">
+                  <div class="project-icon">📊</div>
+                  Dashboard Admin Super Praktis
+              </h3>
+              <p class="project-desc">
+                  Dashboard internal yang bikin ngatur stok barang dan manajemen penggunja jadi gampang banget. 
+                  Interface clean, data real-time, dan insight yang membantu!
+              </p>
+              <a href="https://github.com/username-anda/nama-repo-dashboard/" class="project-link" target="_blank" rel="noopener noreferrer">
+                  Lihat Dashboard →
+              </a>
           </div>
 
           <div class="project-card">
-            <h3 class="project-title">
-              <div class="project-icon">🎨</div>
-              Landing Page yang Eye-Catching
-            </h3>
-            <p class="project-desc">
-              Website company profile dan landing page yang bikin visitors langsung tertarik. 
-              Design modern, loading cepat, dan optimized buat semua device!
-            </p>
-            <a href="#" class="project-link" target="_blank">
-              Intip Design →
-            </a>
+              <h3 class="project-title">
+                  <div class="project-icon">🎨</div>
+                  Landing Page yang Eye-Catching
+              </h3>
+              <p class="project-desc">
+                  Website company profile dan landing page yang bikin visitors langsung tertarik. 
+                  Design modern, loading cepat, dan optimized buat semua device!
+              </p>
+              <a href="https://username-anda.github.io/nama-repo-landing-page/" class="project-link" target="_blank" rel="noopener noreferrer">
+                  Intip Design →
+              </a>
           </div>
         </div>
       </div>
@@ -398,7 +399,7 @@
             <div class="contact-icon">📧</div>
             <div>
               <div style="font-weight: 600;">Email Kita</div>
-              <div>shelteriadev@gmail.com</div>
+              <div>hello@shelteriadev.com</div>
             </div>
           </div>
           <div class="contact-item">
@@ -451,14 +452,20 @@
       observer.observe(card);
     });
 
-    // Parallax effect untuk floating elements
+    // Simple Parallax effect for floating elements on scroll
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
       const parallaxElements = document.querySelectorAll('.floating-circle');
       
       parallaxElements.forEach((element, index) => {
-        const speed = (index + 1) * 0.3;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
+        // Adjust speed for different elements
+        let speed = 0.1;
+        if (index === 0) speed = 0.15;
+        if (index === 1) speed = 0.25;
+        if (index === 2) speed = 0.1;
+        
+        // Use a different transform for each to avoid conflict with the float animation
+        element.style.top = `${20 + (scrolled * speed)}%`; 
       });
     });
   </script>
